@@ -19,6 +19,11 @@ server.start();
 curl http://localhost:3000/render?url=https://www.example.com/
 ```
 
+## Start with PM2
+```bash
+BROWSER_TRY_RESTART_PERIOD=15000 CACHE_TTL=86400 CACHE_MAXSIZE=1000 pm2 start server.js --name prerender --update-env
+```
+
 ## Use Cases
 The Prerender server can be used in conjunction with [our Prerender.io middleware](#middleware) in order to serve the prerendered HTML of your javascript website to search engines (Google, Bing, etc) and social networks (Facebook, Twitter, etc) for SEO. We run the Prerender server at scale for SEO needs at [https://prerender.io/](https://prerender.io/).
 
